@@ -30,4 +30,14 @@ class ReflectionMethod extends \ReflectionMethod implements \XoopsUnit\Reflectio
 
 		return $this;
 	}
+
+	/**
+	 * @param array $arguments
+	 * @return mixed
+	 */
+	public function invokeArray(array $arguments)
+	{
+		array_unshift($arguments, $this->klass);
+		return call_user_func_array(array($this, 'invoke'), $arguments);
+	}
 }

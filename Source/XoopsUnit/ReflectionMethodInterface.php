@@ -9,4 +9,10 @@ interface ReflectionMethodInterface
 	 * @return $this
 	 */
 	public function publicize();
+
+	/**
+	 * @param array $arguments
+	 * @return mixed
+	 */
+	public function invokeArray(array $arguments);
 }
