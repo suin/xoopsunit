@@ -16,8 +16,10 @@ $ composer.phar install
 
 ## Executing Tests
 
+Run phpunit:
+
 ```sh
-$ ./vendor/bin/phpunit
+$ ./phpunit
 ```
 
 ## View Reports
