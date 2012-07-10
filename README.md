@@ -54,4 +54,4 @@ class RevealingSample1Test extends \XoopsUnit\TestCase
 
 ## APIs
 
-* [\XoopsUnit\TestCase](blob/master/Source/XoopsUnit/TestCaseInterface.php)
+* [\XoopsUnit\TestCase](https://github.com/suin/xoopsunit/blob/master/Source/XoopsUnit/TestCaseInterface.php)
