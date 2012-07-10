@@ -4,6 +4,8 @@ namespace XoopsUnit;
 
 interface TestCaseInterface
 {
+	const XOOPSUNIT_VERSION = '1.0';
+
 	/**
 	 * Return new Reveal object
 	 * @param object $object
