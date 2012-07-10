@@ -1,7 +1,5 @@
 # How to Test
 
-[![Build Status](https://secure.travis-ci.org/suin/xoopsunit.png?branch=master)](http://travis-ci.org/suin/xoopsunit)
-
 ## Installation
 
 Install [composer](https://github.com/composer/composer) to your ~/bin:
