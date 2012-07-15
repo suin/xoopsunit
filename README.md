@@ -1,12 +1,14 @@
 # XoopsUnit: Simplify Your Test Code
 
-[![Build Status](https://secure.travis-ci.org/suin/xoopsunit.png?branch=master)](http://travis-ci.org/suin/xoopsunit)
+* master : [![Build Status](https://secure.travis-ci.org/suin/xoopsunit.png?branch=master)](http://travis-ci.org/suin/xoopsunit)
+* develop : [![Build Status](https://secure.travis-ci.org/suin/xoopsunit.png?branch=develop)](http://travis-ci.org/suin/xoopsunit)
 
 XoopsUnit is a extension of PHPUnit. You can write simplier test code with XoopsUnit. 
 
 ## Features
 
 * Revealing privacy of objects.
+* Reporting untested methods automatically.
 
 ## Requirements
 

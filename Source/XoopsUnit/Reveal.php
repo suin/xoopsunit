@@ -3,28 +3,20 @@
 namespace XoopsUnit;
 
 use \InvalidArgumentException;
-use \XoopsUnit\ReflectionClass;
+use \XoopsUnit\ReflectionClassInterface;
 
 class Reveal implements \XoopsUnit\RevealInterface
 {
-	protected $originalObject = null;
-
-	/** @var \XoopsUnit\ReflectionClass */
-	protected $object = null;
+	/** @var \XoopsUnit\ReflectionClassInterface */
+	protected $reflectionClass = null;
 
 	/**
-	 * @param object $object
-	 * @throws \InvalidArgumentException
+	 * Return new Reveal object
+	 * @param \XoopsUnit\ReflectionClassInterface $reflectionClass
 	 */
-	public function __construct($object)
+	public function __construct(ReflectionClassInterface $reflectionClass)
 	{
-		if ( is_object($object) === false )
-		{
-			throw new InvalidArgumentException('Not object was given.');
-		}
-
-		$this->originalObject = $object;
-		$this->object = new ReflectionClass($object);
+		$this->reflectionClass = $reflectionClass;
 	}
 
 	/**
@@ -35,7 +27,7 @@ class Reveal implements \XoopsUnit\RevealInterface
 	 */
 	public function attr($name, $value)
 	{
-		$this->object->property($name)->publicize()->setValue($value);
+		$this->reflectionClass->property($name)->publicize()->setValue($value);
 		return $this;
 	}
 
@@ -49,6 +41,6 @@ class Reveal implements \XoopsUnit\RevealInterface
 	{
 		$arguments = func_get_args();
 		$name = array_shift($arguments);
-		return $this->object->method($name)->publicize()->invokeArray($arguments);
+		return $this->reflectionClass->method($name)->publicize()->invokeArray($arguments);
 	}
 }

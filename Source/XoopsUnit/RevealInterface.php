@@ -2,13 +2,15 @@
 
 namespace XoopsUnit;
 
+use \XoopsUnit\ReflectionClassInterface;
+
 interface RevealInterface
 {
 	/**
-	 * @param object $object
-	 * @throws \InvalidArgumentException
+	 * Return new Reveal object
+	 * @param \XoopsUnit\ReflectionClassInterface $reflectionClass
 	 */
-	public function __construct($object);
+	public function __construct(ReflectionClassInterface $reflectionClass);
 
 	/**
 	 * Modify the value of the protected/private property in the specified object

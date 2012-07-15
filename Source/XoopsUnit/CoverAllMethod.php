@@ -24,6 +24,7 @@ class CoverAllMethod
 		$targetMethods    = $this->_getTestTargetMethods($testTarget);
 		$testCaseMethods  = $this->_getTestCaseMethods($testCase);
 		$uncoveredMethods = array_diff($targetMethods, $testCaseMethods);
+		$uncoveredMethods = array_values($uncoveredMethods); // Reset indexes
 
 		return $uncoveredMethods;
 	}

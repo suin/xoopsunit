@@ -28,8 +28,28 @@ class TestCaseTest extends \XoopsUnit\TestCase
 
 	public function testTestCoverAllMethods()
 	{
-		$testCaseClass = $this->getMockClass($this->testCaseClass, array(), array(), '', false);
-		$testCase = new $testCaseClass();
+		$className = 'Test' . __FUNCTION__ . uniqid();
+
+		$code = '
+			class __CLASS__ extends __PARENT__
+			{
+				public static $testCase;
+				public static $expectedMessage;
+				public static function markTestIncomplete($message = "")
+				{
+					self::$testCase->assertSame(self::$expectedMessage, $message);
+				}
+			}'
+		;
+
+		$code = str_replace('__CLASS__', $className, $code);
+		$code = str_replace('__PARENT__', $this->testCaseClass, $code);
+
+		eval($code);
+
+		$className::$testCase = $this;
+		$className::$expectedMessage = "This test case is missing tests for class: {$className}\n  * testMarkTestIncomplete()";
+		$testCase = new $className();
 		$this->assertNull($testCase->testCoverAllMethods());
 	}
 }

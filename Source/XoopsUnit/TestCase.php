@@ -4,6 +4,7 @@ namespace XoopsUnit;
 
 use \XoopsUnit\Reveal;
 use \XoopsUnit\CoverAllMethod;
+use \XoopsUnit\ReflectionClass;
 
 class TestCase extends \PHPUnit_Framework_TestCase
                implements \XoopsUnit\TestCaseInterface,
@@ -16,7 +17,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
 	 */
 	public function reveal($object)
 	{
-		return new Reveal($object);
+		return new Reveal(new ReflectionClass($object));
 	}
 
 	/**

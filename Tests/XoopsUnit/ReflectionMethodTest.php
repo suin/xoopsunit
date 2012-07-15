@@ -4,6 +4,8 @@ namespace XoopsUnit;
 
 class ReflectionMethodTest extends \XoopsUnit\TestCase
 {
+	protected $reflectionMethodClass = '\XoopsUnit\ReflectionMethod';
+
 	public function test__construct()
 	{
 		$className = __FUNCTION__ . md5(uniqid());
@@ -60,5 +62,28 @@ class ReflectionMethodTest extends \XoopsUnit\TestCase
 		$this->assertTrue($reflectionMethod->isStatic());
 		$this->assertSame($reflectionMethod, $reflectionMethod->publicize());
 		$this->assertSame(true, $reflectionMethod->invoke($className));
+	}
+
+	public function testInvokeArray()
+	{
+		$className = 'className';
+		$arg1 = new \stdClass();
+		$arg2 = new \stdClass();
+		$returnValue = new \stdClass();
+
+		$reflectionMethod = $this
+			->getMockBuilder($this->reflectionMethodClass)
+			->disableOriginalConstructor()
+			->setMethods(array('invoke'))
+			->getMock();
+		$reflectionMethod
+			->expects($this->once())
+			->method('invoke')
+			->with($className, $arg1, $arg2)
+			->will($this->returnValue($returnValue));
+
+		$this->reveal($reflectionMethod)->attr('klass', $className);
+		$actual = $reflectionMethod->invokeArray(array($arg1, $arg2));
+		$this->assertSame($returnValue, $actual);
 	}
 }
