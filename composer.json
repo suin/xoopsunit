@@ -9,5 +9,18 @@
 	],
 	"require": {
 		"php": ">=5.3.0"
+	},
+	"autoload": {
+		"psr-0": {
+			"XoopsUnit": "Source/"
+		}
+	},
+	"suggest": {
+		"EHER/PHPUnit": "This is PHPUnit all in one package. Easy to kick start PHPUnit testing."
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "develop"
+		}
 	}
 }
