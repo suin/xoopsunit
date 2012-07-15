@@ -8,6 +8,7 @@ XoopsUnit is a extension of PHPUnit. You can write simplier test code with Xoops
 ## Features
 
 * Revealing privacy of objects.
+* Reporting untested methods automatically.
 
 ## Requirements
 
