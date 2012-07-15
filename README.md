@@ -16,7 +16,13 @@ XoopsUnit is a extension of PHPUnit. You can write simplier test code with Xoops
 
 ## Installing
 
-Go to your project directory and run this:
+Go to your project directory (There will be `html` and `xoops_trust_path`):
+
+```sh
+$ cd /path/to/your/xoops
+```
+
+And run this:
 
 ```sh
 $ curl https://raw.github.com/gist/3116932/9577749ed6532d3ff6de9b9d1ea3f961ffa55dc7/xoopsunit-install.php -s -o xoopsunit-install.php && php xoopsunit-install.php && \rm xoopsunit-install.php
