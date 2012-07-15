@@ -1,0 +1,13 @@
+{
+	"name": "suin/xoopsunit",
+	"description": "XoopsUnit is a extension of PHPUnit. You can write simplier test code with XoopsUnit.",
+	"authors": [
+		{
+			"name": "Hidehito Nozawa aka Suin",
+			"email": "suinyeze@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+	}
+}
