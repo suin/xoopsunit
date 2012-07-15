@@ -35,7 +35,7 @@ class TestCaseTest extends \XoopsUnit\TestCase
 			{
 				public static $testCase;
 				public static $expectedMessage;
-				public static function markTestIncomplete($message)
+				public static function markTestIncomplete($message = "")
 				{
 					self::$testCase->assertSame(self::$expectedMessage, $message);
 				}
