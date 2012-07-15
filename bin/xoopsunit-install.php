@@ -1,4 +1,7 @@
 #!/usr/bin/env php
+=======================================
+         XoopsUnit Installer
+=======================================
 <?php
 
 $installer = new XoopsUnitInstaller();
