@@ -36,7 +36,7 @@ class RevealTest extends \XoopsUnit\TestCase
 		$reflectionClass = $this->getMock('stdClass', array(
 			'property',
 			'publicize',
-			'setValue',
+			'value',
 		));
 		$reflectionClass
 			->expects($this->at(0))
@@ -49,7 +49,7 @@ class RevealTest extends \XoopsUnit\TestCase
 			->will($this->returnSelf());
 		$reflectionClass
 			->expects($this->at(2))
-			->method('setValue')
+			->method('value')
 			->with($value);
 
 		$reveal = $this->newRevealMock();

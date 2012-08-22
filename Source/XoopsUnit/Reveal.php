@@ -27,7 +27,7 @@ class Reveal implements \XoopsUnit\RevealInterface
 	 */
 	public function attr($name, $value)
 	{
-		$this->reflectionClass->property($name)->publicize()->setValue($value);
+		$this->reflectionClass->property($name)->publicize()->value($value);
 		return $this;
 	}
 
