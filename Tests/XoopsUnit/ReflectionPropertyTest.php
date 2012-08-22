@@ -60,13 +60,13 @@ class ReflectionPropertyTest extends \XoopsUnit\TestCase
 		$this->assertSame('foo_value', $reflectionProperty->getValue($className));
 	}
 
-	public function testSetValue()
+	public function testValue()
 	{
 		$className = __FUNCTION__ . md5(uniqid());
 		eval(sprintf('class %s { public $foo = "foo_value"; }', $className));
 		$object = new $className();
 		$reflectionProperty = new ReflectionProperty($object, 'foo');
-		$this->assertSame($reflectionProperty, $reflectionProperty->setValue('new_value'));
+		$this->assertSame($reflectionProperty, $reflectionProperty->value('new_value'));
 		$this->assertSame('new_value', $object->foo);
 	}
 }

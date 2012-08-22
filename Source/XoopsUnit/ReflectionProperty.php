@@ -36,7 +36,7 @@ class ReflectionProperty extends \ReflectionProperty implements \XoopsUnit\Refle
 	 * @param mixed $value
 	 * @return $this
 	 */
-	public function setValue($value)
+	public function value($value)
 	{
 		parent::setValue($this->klass, $value);
 		return $this;

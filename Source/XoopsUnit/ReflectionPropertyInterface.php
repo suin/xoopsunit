@@ -15,5 +15,5 @@ interface ReflectionPropertyInterface
 	 * @param mixed $value
 	 * @return $this
 	 */
-	public function setValue($value);
+	public function value($value);
 }
